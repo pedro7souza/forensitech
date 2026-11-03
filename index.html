@@ -3,31 +3,89 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#030b18">
+<meta name="theme-color" content="#0f1115">
 <title>ForensicTech | Perícia 4.0</title>
 <link rel="icon" href="logo-mark.png">
+<!-- Importando fonte institucional -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="topbar">
-  <div class="brand"><span class="brand-mark"><img src="logo-mark.png" alt="ForensicTech"></span><div><strong>ForensicTech</strong><small>PERÍCIA 4.0</small></div></div>
-  <div class="crumbs"><span>⌂</span> Casos <i>›</i> FT-004 / 2026 <i>›</i> <b id="crumb">Ficha da Ocorrência</b></div>
-  <div class="status"><span class="dot"></span> <span class="st-text">EQUIPE DE PERÍCIA</span></div>
+
+<header class="main-header">
+  <div class="top-bar">
+    <span>Governo do Estado · Perícia Oficial</span>
+    <div class="top-links">
+      <a href="#">Acesso à Informação</a>
+      <a href="#">Transparência</a>
+    </div>
+  </div>
+  <div class="nav-bar">
+    <div class="brand">
+      <img src="logo-mark.png" alt="ForensicTech" class="logo">
+      <div class="logo-text">
+        <strong>PERÍCIA CRIMINAL</strong>
+        <span>FORENSICTECH</span>
+      </div>
+    </div>
+   
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#" class="active">Início</a>
+      <a href="#">Sobre a Perícia</a>
+      <a href="#">Serviços</a>
+      <a href="#">Unidades</a>
+      <a href="#">Legislação</a>
+    </nav>
+  </div>
 </header>
+
 <main class="shell">
+
   <aside class="sidebar">
-    <div class="case-card"><p class="eyebrow">CASO ATIVO</p><h2>FT-004 / 2026</h2><p class="muted"><span class="dot"></span>Investigação em andamento</p></div>
-    <div class="progress"><div id="progressBar"></div></div><p id="progressText" class="muted">Etapa 1 de 8</p>
+    <div class="case-card">
+      <p class="eyebrow">CASO ATIVO</p>
+      <h2>FT-004 / 2026</h2>
+      <p class="muted"><span class="dot"></span> Investigação em andamento</p>
+    </div>
+    
+    <div class="progress-container">
+      <div class="progress"><div id="progressBar"></div></div>
+      <p id="progressText" class="muted">Etapa 1 de 8</p>
+    </div>
+   
     <nav id="stageNav"></nav>
-    <div class="side-note"><strong>Ciência · Tecnologia · Justiça</strong><span>SIMULAÇÃO CONFIDENCIAL</span></div>
   </aside>
+  
   <section class="content">
-    <div class="content-head"><span id="stageNumber" class="tag">ETAPA 01</span><span class="pill">⌇ ANÁLISE EM ANDAMENTO</span></div>
+    <div class="content-head">
+      <span id="stageNumber" class="tag">ETAPA 01</span>
+      <span class="pill">⌇ ANÁLISE EM ANDAMENTO</span>
+    </div>
+   
     <div id="stageContent"></div>
-    <div class="controls"><button id="backBtn" class="btn secondary">← Voltar</button><div id="dots" class="dots"></div><button id="nextBtn" class="btn primary">Próxima etapa →</button></div>
+    
+    <div class="controls">
+      <button id="backBtn" class="btn secondary">← Voltar</button>
+      <div id="dots" class="dots"></div>
+      <button id="nextBtn" class="btn primary">Próxima etapa →</button>
+    </div>
+    
     <p class="footer-note">PROJETO EDUCACIONAL FICTÍCIO · Evidências simuladas para fins de aprendizagem.</p>
   </section>
 </main>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
+ -->
 <script src="script.js"></script>
 </body>
 </html>
