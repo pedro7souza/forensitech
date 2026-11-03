@@ -1,4 +1,4 @@
-const SHEET_URL = ""; /* cole aqui o link do Apps Script (termina em /exec) */
+const SHEET_URL = "";
 let S = {};
 try {
   S = JSON.parse(localStorage.getItem("ft-state") || "{}");
