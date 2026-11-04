@@ -1,1 +1,84 @@
-g
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#0f1115">
+<title>ForensicTech | Perícia 4.0</title>
+<link rel="icon" href="logo-mark.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark"><img src="logo-mark.png" alt="ForensicTech"></span>
+    <div>
+      <strong>ForensicTech</strong>
+      <small>PERÍCIA 4.0</small>
+    </div>
+  </div>
+  
+  <nav class="desktop-menu">
+    <a href="#" class="active">Início</a>
+    <a href="https://www.policiacientifica.sp.gov.br/" target="_blank">Sobre a Perícia</a>
+    <a href="https://www.policiacientifica.sp.gov.br/servicos" target="_blank">Serviços</a>
+    <a href="https://www.policiacientifica.sp.gov.br/unidades" target="_blank">Unidades</a>
+  </nav>
+
+  <button class="menu-toggle" id="menuToggle">
+    <i class="bi bi-list"></i>
+  </button>
+</header>
+
+<main class="shell">
+  <aside class="sidebar">
+    <div class="case-card">
+      <p class="eyebrow">CASO ATIVO</p>
+      <h2>FT-004 / 2026</h2>
+      <p class="muted">Investigação em andamento</p>
+    </div>
+    
+    <div class="progress"><div id="progressBar"></div></div>
+    <p id="progressText" class="muted">Etapa 1 de 8</p>
+    
+    <nav id="stageNav"></nav>
+  </aside>
+
+  <section class="content">
+    <div class="content-head">
+      <span id="stageNumber" class="tag">ETAPA 01</span>
+      <span class="pill">⌇ ANÁLISE EM ANDAMENTO</span>
+    </div>
+    
+    <div id="stageContent"></div>
+    
+    <div class="controls">
+      <button id="backBtn" class="btn secondary">← Voltar</button>
+      <div id="dots" class="dots"></div>
+      <button id="nextBtn" class="btn primary">Próxima etapa →</button>
+    </div>
+    
+    <p class="footer-note">PROJETO EDUCACIONAL FICTÍCIO · Evidências simuladas para fins de aprendizagem.</p>
+  </section>
+</main>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.querySelector('.desktop-menu');
+  
+  const mobileMenu = document.createElement('div');
+  mobileMenu.className = 'mobile-menu';
+  mobileMenu.innerHTML = navLinks.innerHTML;
+  document.body.appendChild(mobileMenu);
+
+  menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+  });
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>
