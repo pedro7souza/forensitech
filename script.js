@@ -340,7 +340,7 @@ function init3D() {
   const M = {
     1: "E-02 · Bancada: copo recolhido para análise de impressões digitais.",
     2: "Posição do corpo, perto da bancada central. Parte da área fica oculta de quem está na porta.",
-    3: "E-04 · Compartimento do protótipo: vazio, sem dano visível no fecho.",
+    3: "E-02 · Copo com impressão digital na bancada central, compatível com o suspeito B.",
     4: "E-03 · Marca de calçado no piso: não identifica uma pessoa sozinha.",
   };
   st.onpointerdown = (e) => {
@@ -362,6 +362,7 @@ function init3D() {
     st.classList.remove("grab");
   };
   st.onwheel = (e) => {
+    if (window.matchMedia("(max-width: 800px)").matches) return;
     e.preventDefault();
     z = Math.max(60, Math.min(180, z - Math.sign(e.deltaY) * 8));
     up();
