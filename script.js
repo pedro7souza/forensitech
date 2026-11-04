@@ -210,12 +210,11 @@ function suspects() {
   }).join("")}</div>`;
 }
 
-// CORREÇÃO: O nome da equipe agora aparece no cartão do caso (Sidebar)
 function setTeam() {
-  const el = document.querySelector(".case-card .muted");
+  const el = document.getElementById("teamDisplay");
   if (el) {
     if (S.team) {
-      el.innerHTML = `<span class="dot"></span> Equipe: ${escapeHtml(S.team)}`;
+      el.innerHTML = `<span class="dot"></span> EQUIPE: ${escapeHtml(S.team).toUpperCase()}`;
     } else {
       el.innerHTML = `<span class="dot"></span> Investigação em andamento`;
     }
