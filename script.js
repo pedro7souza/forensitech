@@ -209,15 +209,27 @@ function suspects() {
     return `<div class="srow"><img src="${u.i}" alt="${u.n}"><div><span class="label">${u.g}</span><h3>${u.n}</h3><b class="role">${u.r}</b><p>“${u.d}”</p></div></div>`;
   }).join("")}</div>`;
 }
+
+// CORREÇÃO: O nome da equipe agora aparece no cartão do caso (Sidebar)
 function setTeam() {
-  const e = document.querySelector(".st-text");
-  if (e) e.textContent = (S.team || "Equipe de Perícia").toUpperCase();
+  const el = document.querySelector(".case-card .muted");
+  if (el) {
+    if (S.team) {
+      el.innerHTML = `<span class="dot"></span> Equipe: ${escapeHtml(S.team)}`;
+    } else {
+      el.innerHTML = `<span class="dot"></span> Investigação em andamento`;
+    }
+  }
 }
+
 function restore() {
   const ab = nav.children[current];
   if (ab) nav.scrollLeft = ab.offsetLeft - nav.clientWidth / 2 + ab.clientWidth / 2;
   const t = document.getElementById("teamName");
-  if (t) { t.value = S.team || ""; t.oninput = () => { S.team = t.value.trim(); sv(); setTeam(); }; }
+  if (t) { 
+    t.value = S.team || ""; 
+    t.oninput = () => { S.team = t.value.trim(); sv(); setTeam(); }; 
+  }
   for (const n in S.ans) {
     const r = document.querySelector(`input[name="${n}"][value="${S.ans[n].v}"]`), f = document.getElementById("fb-" + n);
     if (r) r.checked = true;
