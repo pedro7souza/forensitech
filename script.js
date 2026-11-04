@@ -68,7 +68,7 @@ function dna() {
     b += (i ? "L" : "M") + x2.toFixed(1) + " " + y;
     if (i % 2) r += `<line x1="${x1.toFixed(1)}" y1="${y}" x2="${x2.toFixed(1)}" y2="${y}"/>`;
   }
-  return `<div class="panel viz"><span class="label">VISUALIZAÇÃO 3D DO DNA</span><svg viewBox="0 0 300 250" class="dna"><g fill="none" stroke-linecap="round"><path d="${a}" stroke="#3cc8ff" stroke-width="4"/><path d="${b}" stroke="#1e7bff" stroke-width="4"/><g stroke="#7fe3ff" stroke-width="1.5" opacity=".7">${r}</g></g></svg></div>`;
+  return `<div class="panel viz"><span class="label" style="color: #1e5aa8; font-weight: 700; letter-spacing: 1px; display: block; margin-bottom: 15px;">VISUALIZAÇÃO 3D DO DNA</span><svg viewBox="0 0 300 250" class="dna"><g fill="none" stroke-linecap="round"><path d="${a}" stroke="#3cc8ff" stroke-width="4"/><path d="${b}" stroke="#1e7bff" stroke-width="4"/><g stroke="#7fe3ff" stroke-width="1.5" opacity=".7">${r}</g></g></svg></div>`;
 }
 function showStage(i) {
   current = Math.max(0, Math.min(stages.length - 1, i));
