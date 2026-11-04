@@ -394,4 +394,6 @@ p { line-height: 1.7; color: #bcd3e8; }
   .st3d { height: 330px; }
   .vid video { max-height: 260px; }
   .fp svg.big { transform: scale(1.15); }
+  
+  .zl { display: none; }
 }
